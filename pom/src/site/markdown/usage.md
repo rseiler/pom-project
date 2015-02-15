@@ -124,10 +124,10 @@ Nothing is changed. Just use maven:
 
 ### Parallel Build
 
-In a multi module maven project it's possible to build the modules in parallel - if the dependencies allow it.
+In a multi module maven project it's possible to build the modules in parallel - if the dependencies allow this.
 
-Use the ```-T``` argument. Ether define a fix thread count with ```-T 4``` or define the thread depended on the cores
-of the computer with ```-T 2C```. 2C means for each core 2 threads should be used. E.g.: 4 cores => 8 threads.
+Use the ```-T``` argument. Ether define a fix thread count with ```-T 4``` or define the thread count depended on the
+cores of the computer with ```-T 2C```. 2C means for each core 2 threads will be used. E.g.: 4 cores => 8 threads.
 
     mvn install -T 4
     mvn install -T 2C
@@ -135,7 +135,7 @@ of the computer with ```-T 2C```. 2C means for each core 2 threads should be use
 ### Speed Up the Build
 
 There is another option to speed up the build. With the ```-o``` (offline) argument maven won't check and download the
-dependencies which gives you a speed boost. But be careful. If a there is a dependency which isn't in your local
+dependencies which gives you a speed boost. But be careful. If there is a dependency which isn't in your local
 repository than the build will fail.
 
     mvn install -o
