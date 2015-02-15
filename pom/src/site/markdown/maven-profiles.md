@@ -1,4 +1,4 @@
-# Profiles
+# Maven Profiles
 
 There are following maven profiles:
 
@@ -6,12 +6,29 @@ There are following maven profiles:
 * __execITs__:              executes the integration tests
 * __skipTests__:            skips the unit tests and integration tests
 
+
+## Examples
+
+__Enable Integration Tests__
+
+    mvn goal -P execITs
+
+__Disable Static Code Analysis__
+
+    mvn goal -P !staticCodeAnalysis
+
+__Disable Tests__
+
+    mvn goal -P skipTests
+
+## Information
+
+[Introduction to Maven profiles](https://maven.apache.org/guides/introduction/introduction-to-profiles.html)
+
 To enable profiles use
 
-    mvn groupId:artifactId:goal -P profile-1,profile-2
+    mvn goal -P profile-1,profile-2
 
 To disable profiles use
 
-    mvn groupId:artifactId:goal -P !profile-1,!profile-2
-
-[Introduction to Maven profiles](https://maven.apache.org/guides/introduction/introduction-to-profiles.html)
+    mvn goal -P !profile-1,!profile-2
