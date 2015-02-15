@@ -21,24 +21,48 @@
         <module>pom</module>
     </modules>
 
+    <properties>
+        <main.basedir>${project.basedir}</main.basedir>
+    </properties>
+
     <build>
-        <pluginManagement>
-            <plugins>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-scm-publish-plugin</artifactId>
-                    <version>1.1</version>
-                    <inherited>true</inherited>
-                    <configuration>
-                        <checkinComment>Publishing Site Docs for ${project.artifactId}:${project.version}</checkinComment>
-                        <!-- Plugins defaults to "target/staging" and since the distributionManagement section is a pain in the ass for site docs, this is easier -->
-                        <content>${project.build.directory}/site-staging</content>
-                        <pubScmUrl>scm:git:git@github.com:rseiler/pom-project-pom.git</pubScmUrl>
-                        <scmBranch>gh-pages</scmBranch>
-                    </configuration>
-                </plugin>
-            </plugins>
-        </pluginManagement>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-scm-publish-plugin</artifactId>
+                <version>1.1</version>
+                <inherited>true</inherited>
+                <configuration>
+                    <checkoutDirectory>${main.basedir}/github.com</checkoutDirectory>
+                    <checkinComment>publishing site documentation</checkinComment>
+                    <content>${env.HOME}/sitedocs/pom-project</content>
+                    <pubScmUrl>scm:git:https://github.com/rseiler/pom-project.git</pubScmUrl>
+                    <scmBranch>gh-pages</scmBranch>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-site-plugin</artifactId>
+                <version>3.4</version>
+                <executions>
+                    <!-- used for multiproject builds -->
+                    <execution>
+                        <id>attach-descriptor</id>
+                        <goals>
+                            <goal>attach-descriptor</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <dependencies>
+                    <!-- To use the Markdown format -->
+                    <dependency>
+                        <groupId>org.apache.maven.doxia</groupId>
+                        <artifactId>doxia-module-markdown</artifactId>
+                        <version>1.6</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+        </plugins>
     </build>
 
     <reporting>
@@ -85,7 +109,7 @@
     <distributionManagement>
         <site>
             <id>site-docs</id>
-            <url>file:${project.build.directory}/site-staging</url>
+            <url>file://${env.HOME}/sitedocs/pom-project</url>
         </site>
     </distributionManagement>
 

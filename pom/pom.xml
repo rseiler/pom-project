@@ -24,7 +24,7 @@
         <skipCodeAnalysis>false</skipCodeAnalysis>
 
         <!-- multi project config -->
-        <main.basedir>${project.basedir}</main.basedir>
+        <main.basedir>${project.parent.basedir}</main.basedir>
         <skipDependencyPlugin>false</skipDependencyPlugin>
 
         <!-- general config -->
