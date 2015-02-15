@@ -37,6 +37,11 @@ Therefor you need to clone the GIT repository or download the repository and ins
 Afterwards you can deploy the artifacts to your Maven repository (e.g. Nexus).
 
 
+# Documentation
+
+Visit the documentation at: [Latest Documentation](https://rseiler.github.io/pom-project/pom/index.html)
+
+
 # License
 
 The pom-project is licensed under the terms of the
