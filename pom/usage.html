@@ -218,8 +218,8 @@
 </pre></div></div></div>
 <div class="section">
 <h3><a name="Parallel_Build"></a>Parallel Build</h3>
-<p>In a multi module maven project it&#x2019;s possible to build the modules in parallel - if the dependencies allow it.</p>
-<p>Use the <tt>-T</tt> argument. Ether define a fix thread count with <tt>-T 4</tt> or define the thread depended on the cores of the computer with <tt>-T 2C</tt>. 2C means for each core 2 threads should be used. E.g.: 4 cores =&gt; 8 threads.</p>
+<p>In a multi module maven project it&#x2019;s possible to build the modules in parallel - if the dependencies allow this.</p>
+<p>Use the <tt>-T</tt> argument. Ether define a fix thread count with <tt>-T 4</tt> or define the thread count depended on the cores of the computer with <tt>-T 2C</tt>. 2C means for each core 2 threads will be used. E.g.: 4 cores =&gt; 8 threads.</p>
 
 <div class="source">
 <div class="source">
@@ -228,7 +228,7 @@ mvn install -T 2C
 </pre></div></div></div>
 <div class="section">
 <h3><a name="Speed_Up_the_Build"></a>Speed Up the Build</h3>
-<p>There is another option to speed up the build. With the <tt>-o</tt> (offline) argument maven won&#x2019;t check and download the dependencies which gives you a speed boost. But be careful. If a there is a dependency which isn&#x2019;t in your local repository than the build will fail.</p>
+<p>There is another option to speed up the build. With the <tt>-o</tt> (offline) argument maven won&#x2019;t check and download the dependencies which gives you a speed boost. But be careful. If there is a dependency which isn&#x2019;t in your local repository than the build will fail.</p>
 
 <div class="source">
 <div class="source">
