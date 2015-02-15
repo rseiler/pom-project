@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>pom &#x2013; Profiles</title>
+    <title>pom &#x2013; Maven Profiles</title>
     <style type="text/css" media="all">
       @import url("./css/maven-base.css");
       @import url("./css/maven-theme.css");
@@ -80,7 +80,7 @@
     </div>
     <div id="bodyColumn">
       <div id="contentBox">
-        <h1>Profiles</h1>
+        <h1>Maven Profiles</h1>
 <p>There are following maven profiles:</p>
 
 <ul>
@@ -91,19 +91,41 @@
   
 <li><b>skipTests</b>: skips the unit tests and integration tests</li>
 </ul>
+<div class="section">
+<h2><a name="Examples"></a>Examples</h2>
+<p><b>Enable Integration Tests</b></p>
+
+<div class="source">
+<div class="source">
+<pre>mvn goal -P execITs
+</pre></div></div>
+<p><b>Disable Static Code Analysis</b></p>
+
+<div class="source">
+<div class="source">
+<pre>mvn goal -P !staticCodeAnalysis
+</pre></div></div>
+<p><b>Disable Tests</b></p>
+
+<div class="source">
+<div class="source">
+<pre>mvn goal -P skipTests
+</pre></div></div></div>
+<div class="section">
+<h2><a name="Information"></a>Information</h2>
+<p><a class="externalLink" href="https://maven.apache.org/guides/introduction/introduction-to-profiles.html">Introduction to Maven profiles</a></p>
 <p>To enable profiles use</p>
 
 <div class="source">
 <div class="source">
-<pre>mvn groupId:artifactId:goal -P profile-1,profile-2
+<pre>mvn goal -P profile-1,profile-2
 </pre></div></div>
 <p>To disable profiles use</p>
 
 <div class="source">
 <div class="source">
-<pre>mvn groupId:artifactId:goal -P !profile-1,!profile-2
-</pre></div></div>
-<p><a class="externalLink" href="https://maven.apache.org/guides/introduction/introduction-to-profiles.html">Introduction to Maven profiles</a></p>
+<pre>mvn goal -P !profile-1,!profile-2
+</pre></div></div></div>
       </div>
     </div>
     <div class="clear">
