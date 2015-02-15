@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>at.rseiler</groupId>
+    <artifactId>pom-project</artifactId>
+    <version>1.1</version>
+    <packaging>pom</packaging>
+    <name>pom-project</name>
+    <url>https://github.com/rseiler/pom-project.git</url>
+    <description>
+        This is just the wrapper project to build the Maven POM.
+        Please go to the Maven POM module for more details.
+    </description>
+
+    <modules>
+        <module>config</module>
+        <module>annotation</module>
+        <module>pom</module>
+    </modules>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-scm-publish-plugin</artifactId>
+                    <version>1.1</version>
+                    <inherited>true</inherited>
+                    <configuration>
+                        <checkinComment>Publishing Site Docs for ${project.artifactId}:${project.version}</checkinComment>
+                        <!-- Plugins defaults to "target/staging" and since the distributionManagement section is a pain in the ass for site docs, this is easier -->
+                        <content>${project.build.directory}/site-staging</content>
+                        <pubScmUrl>scm:git:git@github.com:rseiler/pom-project-pom.git</pubScmUrl>
+                        <scmBranch>gh-pages</scmBranch>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
+    <reporting>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-project-info-reports-plugin</artifactId>
+                <version>2.7</version>
+                <configuration>
+                    <dependencyLocationsEnabled>false</dependencyLocationsEnabled>
+                </configuration>
+                <reportSets>
+                    <reportSet>
+                        <reports>
+                            <report>index</report>
+                            <!--<report>cim</report>-->
+                            <report>dependencies</report>
+                            <!--<report>dependency-convergence</report>-->
+                            <report>dependency-info</report>
+                            <report>dependency-management</report>
+                            <!--<report>distribution-management</report>-->
+                            <!--<report>issue-tracking</report>-->
+                            <report>license</report>
+                            <!--<report>mailing-list</report>-->
+                            <report>modules</report>
+                            <report>plugin-management</report>
+                            <report>project-team</report>
+                            <report>scm</report>
+                            <report>summary</report>
+                        </reports>
+                    </reportSet>
+                </reportSets>
+            </plugin>
+        </plugins>
+    </reporting>
+
+    <scm>
+        <url>https://github.com/rseiler/pom-project.git</url>
+        <connection>scm:git:https://github.com/rseiler/pom-project.git</connection>
+        <developerConnection>scm:git:ssh://github.com/rseiler/pom-project.git</developerConnection>
+        <tag>HEAD</tag>
+    </scm>
+
+    <distributionManagement>
+        <site>
+            <id>site-docs</id>
+            <url>file:${project.build.directory}/site-staging</url>
+        </site>
+    </distributionManagement>
+
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+            <comments>A business-friendly OSS license</comments>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <id>rseiler</id>
+            <name>Reinhard Seiler</name>
+            <email>reinhard.seiler@gmail.com</email>
+            <roles>
+                <role>developer</role>
+            </roles>
+        </developer>
+    </developers>
+
+</project>

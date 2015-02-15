@@ -1,0 +1,7 @@
+.source {
+    border: none !important;
+}
+
+.source .source {
+    border: 1px solid #999999 !important;
+}
