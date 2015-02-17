@@ -23,6 +23,7 @@
 
     <properties>
         <main.basedir>${project.basedir}</main.basedir>
+        <git-uri>git:https://github.com/rseiler/pom-project.git</git-uri>
     </properties>
 
     <build>
@@ -36,7 +37,7 @@
                     <checkoutDirectory>${main.basedir}/github.com</checkoutDirectory>
                     <checkinComment>publishing site documentation</checkinComment>
                     <content>${env.HOME}/sitedocs/pom-project</content>
-                    <pubScmUrl>scm:git:https://github.com/rseiler/pom-project.git</pubScmUrl>
+                    <pubScmUrl>scm:${git-uri}</pubScmUrl>
                     <scmBranch>gh-pages</scmBranch>
                 </configuration>
             </plugin>
@@ -101,9 +102,8 @@
 
     <scm>
         <url>https://github.com/rseiler/pom-project.git</url>
-        <connection>scm:git:https://github.com/rseiler/pom-project.git</connection>
-        <developerConnection>scm:git:ssh://github.com/rseiler/pom-project.git</developerConnection>
-        <tag>HEAD</tag>
+        <connection>scm:${git-uri}</connection>
+        <developerConnection>scm:${git-uri}</developerConnection>
     </scm>
 
     <distributionManagement>
