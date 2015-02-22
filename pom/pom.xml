@@ -447,7 +447,7 @@
                 <artifactId>maven-javadoc-plugin</artifactId>
                 <version>${maven-javadoc-plugin.version}</version>
                 <configuration>
-                    <excludePackageNames>at.rseiler.kenni.database.jooq.generated.*</excludePackageNames>
+                    <excludePackageNames>*.generated.*</excludePackageNames>
                 </configuration>
                 <reportSets>
                     <reportSet>
