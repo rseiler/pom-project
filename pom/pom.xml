@@ -12,6 +12,7 @@
     <packaging>pom</packaging>
     <groupId>at.rseiler.pom-project</groupId>
     <artifactId>pom</artifactId>
+    <version>1.1</version>
     <name>pom</name>
     <description>
         The POM is indented to be used as a parent POM and to speed up the setup/configuration of a new project.
@@ -63,7 +64,7 @@
         <doxia-module-markdown.version>1.6</doxia-module-markdown.version>
 
         <!-- maven plugin config -->
-        <cpd-minimumTokens>50</cpd-minimumTokens>
+        <cpd-minimumTokens>100</cpd-minimumTokens>
         <checkstyle.version>6.1.1</checkstyle.version>
 
         <!-- environment dependent properties -->
@@ -101,6 +102,14 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>at.rseiler.pom-project</groupId>
+            <artifactId>annotation</artifactId>
+            <version>1.1</version>
+        </dependency>
+    </dependencies>
 
     <build>
         <pluginManagement>
@@ -192,7 +201,7 @@
                                 <artifactItem>
                                     <groupId>at.rseiler.pom-project</groupId>
                                     <artifactId>config</artifactId>
-                                    <version>${project.version}</version>
+                                    <version>1.1</version>
                                     <classifier>config</classifier>
                                     <type>zip</type>
                                     <outputDirectory>${main.basedir}/config</outputDirectory>
