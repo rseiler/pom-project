@@ -5,14 +5,14 @@
     <parent>
         <artifactId>pom-project</artifactId>
         <groupId>at.rseiler</groupId>
-        <version>1.2-SNAPSHOT</version>
+        <version>1.0</version>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
     <packaging>pom</packaging>
     <groupId>at.rseiler.pom-project</groupId>
     <artifactId>pom</artifactId>
-    <version>1.2-SNAPSHOT</version>
+    <version>1.0</version>
     <name>${project.groupId}:${project.artifactId}</name>
     <description>
         The POM is indented to be used as a parent POM and to speed up the setup/configuration of a new project.
@@ -113,7 +113,7 @@
         <dependency>
             <groupId>at.rseiler.pom-project</groupId>
             <artifactId>annotation</artifactId>
-            <version>1.2-SNAPSHOT</version>
+            <version>1.0</version>
         </dependency>
     </dependencies>
 
@@ -136,7 +136,7 @@
                         <failurePriority>3</failurePriority>
                         <targetJdk>${java.version}</targetJdk>
                         <rulesets>
-                            <ruleset>${main.basedir}/config/code-analysis/pmd-ruleset.xml</ruleset>
+                            <ruleset>${main.basedir}/target/config/code-analysis/pmd-ruleset.xml</ruleset>
                         </rulesets>
                         <excludes>
                             <exclude>**/generated/**</exclude>
@@ -172,8 +172,8 @@
                     <configuration>
                         <failOnViolation>false</failOnViolation>
                         <logViolationsToConsole>true</logViolationsToConsole>
-                        <configLocation>config/code-analysis/checkstyle.xml</configLocation>
-                        <suppressionsLocation>${main.basedir}/config/code-analysis/checkstyle-suppression.xml
+                        <configLocation>${main.basedir}/target/config/code-analysis/checkstyle.xml</configLocation>
+                        <suppressionsLocation>${main.basedir}/target/config/code-analysis/checkstyle-suppression.xml
                         </suppressionsLocation>
                         <skip>${skipCodeAnalysis}</skip>
                     </configuration>
@@ -277,7 +277,7 @@
                                 <artifactItem>
                                     <groupId>at.rseiler.pom-project</groupId>
                                     <artifactId>config</artifactId>
-                                    <version>1.1</version>
+                                    <version>1.0</version>
                                     <classifier>config</classifier>
                                     <type>zip</type>
                                     <outputDirectory>${main.basedir}/target/config</outputDirectory>

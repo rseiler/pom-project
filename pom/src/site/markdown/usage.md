@@ -5,7 +5,7 @@ To use this POM as parent POM add this configuration to your POM:
     <parent>
         <groupId>at.rseiler.pom-project</groupId>
         <artifactId>pom</artifactId>
-        <version>1.1</version>
+        <version>1.0</version>
     </parent>
 
 Then your own parent POM must define this property:
@@ -41,7 +41,7 @@ This makes sense if there is no Java code in the module to check.
 
 #### Config
 
-The configuration for the static code analysis tools will automatically be unpacked to ```${project.basedir}/config/code-analysis```.
+The configuration for the static code analysis tools will automatically be unpacked to ```${main.basedir}/target/config/code-analysis```.
 
 * checkstyle.xml
 * checkstyle-suppressions.xml
@@ -64,6 +64,34 @@ If you want to provide these files yourself then disable the unpacking like this
         </plugins>
     </build>
 
+Then define your own file locations:
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-pmd-plugin</artifactId>
+                    <configuration>
+                        <rulesets>
+                            <ruleset>${main.basedir}/config/code-analysis/pmd-ruleset.xml</ruleset>
+                        </rulesets>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-checkstyle-plugin</artifactId>
+                    <configuration>
+                        <configLocation>${main.basedir}/config/code-analysis/checkstyle.xml</configLocation>
+                        <suppressionsLocation>
+                            ${main.basedir}/config/code-analysis/checkstyle-suppression.xml
+                        </suppressionsLocation>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
 #### FindBugs
 
 If Dependency Injection is used with setters or with fields then FindBugs needs to be configured to ignore the
@@ -73,7 +101,7 @@ the name of the class or the name of the field.
 
 __Example__
 
-First create the ```file://${project.basedir}/config/code-analysis/findbugs-exclude.xml``` which should like this:
+First create the ```${main.basedir}/findbugs-exclude.xml``` which should like this (depending on your setup):
 
     <FindBugsFilter>
         <Match>
@@ -101,7 +129,7 @@ Then configure the _findbugs-maven-plugin_:
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>findbugs-maven-plugin</artifactId>
                     <configuration>
-                        <excludeFilterFile>${main.basedir}/config/code-analysis/findbugs-exclude.xml</excludeFilterFile>
+                        <excludeFilterFile>${main.basedir}/findbugs-exclude.xml</excludeFilterFile>
                     </configuration>
                 </plugin>
             </plugins>
