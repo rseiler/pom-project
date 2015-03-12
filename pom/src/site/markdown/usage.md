@@ -26,8 +26,8 @@ That's needed to correctly reference the configuration files for the static code
 
 ### Static Code Analysis
 
-If not [disabled](maven-profiles.html) than the static code analysis are executed by default. If a major issue is found
-than the build will fail.
+If not [disabled](maven-profiles.html) then the static code analysis are executed by default. If a major issue is found
+then the build will fail.
 
 #### Disabling for a specific module
 
@@ -47,7 +47,7 @@ The configuration for the static code analysis tools will automatically be unpac
 * checkstyle-suppressions.xml
 * pmd-ruleset.xml
 
-If you want to provide these files yourself than disable the unpacking like this:
+If you want to provide these files yourself then disable the unpacking like this:
 
     <build>
         <plugins>
@@ -66,7 +66,7 @@ If you want to provide these files yourself than disable the unpacking like this
 
 #### FindBugs
 
-If Dependency Injection is used with setters or with fields than FindBugs needs to be configured to ignore the
+If Dependency Injection is used with setters or with fields then FindBugs needs to be configured to ignore the
 ```UWF_FIELD_NOT_INITIALIZED_IN_CONSTRUCTOR: Field not initialized in constructor but dereferenced without null check```
 check. Sadly it's not possible to use the annotations (@Autowired or @Inject) to suppress this check. It's needed to use
 the name of the class or the name of the field.
@@ -136,7 +136,7 @@ cores of the computer with ```-T 2C```. 2C means for each core 2 threads will be
 
 There is another option to speed up the build. With the ```-o``` (offline) argument maven won't check and download the
 dependencies which gives you a speed boost. But be careful. If there is a dependency which isn't in your local
-repository than the build will fail.
+repository then the build will fail.
 
     mvn install -o
     mvn install -o -T 2C
