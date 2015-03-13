@@ -19,9 +19,9 @@ under the License.
 -->
 <rss version="0.91">
   <channel>
-    <title>pom - Checkstyle report</title>
+    <title>at.rseiler.pom-project:pom - Checkstyle report</title>
     <link>https://github.com/rseiler/pom-project.git/pom</link>
-    <description>pom - Checkstyle report</description>
+    <description>at.rseiler.pom-project:pom - Checkstyle report</description>
     <language>en-us</language>
     <copyright>&#169;2015</copyright>
     <item>
