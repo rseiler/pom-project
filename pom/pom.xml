@@ -6,11 +6,12 @@
     <parent>
         <groupId>at.rseiler</groupId>
         <artifactId>pom-project</artifactId>
-        <version>1.0.1</version>
+        <version>1.1</version>
     </parent>
 
+    <groupId>at.rseiler.pom-project</groupId>
     <artifactId>pom</artifactId>
-    <version>1.0.1</version>
+    <version>1.1</version>
 
     <packaging>pom</packaging>
     <name>${project.groupId}:${project.artifactId}</name>
@@ -117,7 +118,7 @@
         <dependency>
             <groupId>at.rseiler.pom-project</groupId>
             <artifactId>annotation</artifactId>
-            <version>1.0.1</version>
+            <version>1.1</version>
         </dependency>
     </dependencies>
 
@@ -297,7 +298,7 @@
                                 <artifactItem>
                                     <groupId>at.rseiler.pom-project</groupId>
                                     <artifactId>config</artifactId>
-                                    <version>1.0</version>
+                                    <version>1.1</version>
                                     <classifier>config</classifier>
                                     <type>zip</type>
                                     <outputDirectory>${main.basedir}/target/config</outputDirectory>
@@ -727,59 +728,6 @@
             <properties>
                 <skipTests>true</skipTests>
             </properties>
-        </profile>
-
-        <profile>
-            <id>release</id>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-source-plugin</artifactId>
-                        <inherited>true</inherited>
-                        <executions>
-                            <execution>
-                                <id>attach-sources</id>
-                                <goals>
-                                    <goal>jar-no-fork</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-javadoc-plugin</artifactId>
-                        <inherited>true</inherited>
-                        <executions>
-                            <execution>
-                                <id>attach-javadocs</id>
-                                <goals>
-                                    <goal>jar</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-deploy-plugin</artifactId>
-                        <inherited>true</inherited>
-                        <configuration>
-                            <updateReleaseInfo>true</updateReleaseInfo>
-                        </configuration>
-                    </plugin>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-gpg-plugin</artifactId>
-                        <executions>
-                            <execution>
-                                <goals>
-                                    <goal>sign</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-                </plugins>
-            </build>
         </profile>
     </profiles>
 
