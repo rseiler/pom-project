@@ -6,12 +6,12 @@
     <parent>
         <groupId>at.rseiler</groupId>
         <artifactId>pom-project</artifactId>
-        <version>1.1</version>
+        <version>1.2</version>
     </parent>
 
     <groupId>at.rseiler.pom-project</groupId>
     <artifactId>annotation</artifactId>
-    <version>1.1</version>
+    <version>1.2</version>
 
     <name>${project.groupId}:${project.artifactId}</name>
     <description>

@@ -10,6 +10,7 @@ The POM is indented to be used as a parent POM, to speed up the setup/configurat
 ## Features
 
 * Static Code Analysis
+    * [Error Prone](http://errorprone.info/)
     * [FindBugs](http://findbugs.sourceforge.net/)
     * [PMD](http://pmd.sourceforge.net/)
     * [CheckStyle](http://checkstyle.sourceforge.net/)

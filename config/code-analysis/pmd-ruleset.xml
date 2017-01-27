@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ruleset xmlns="http://pmd.sourceforge.net/ruleset/2.0.0" name="PMD Coding Rules from Project Default" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0 http://pmd.sourceforge.net/ruleset_2_0_0.xsd" xsi:noNamespaceSchemaLocation="http://pmd.sourceforge.net/ruleset_2_0_0.xsd">
-    <description>These rules references were generated using QAPlug 1.3.5 and QAPlug - PMD 1.3.5</description>
+<ruleset xmlns="http://pmd.sourceforge.net/ruleset/2.0.0"
+         name="rseiler's Coding Rules"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0 http://pmd.sourceforge.net/ruleset_2_0_0.xsd"
+         xsi:noNamespaceSchemaLocation="http://pmd.sourceforge.net/ruleset_2_0_0.xsd">
+    <description>These rules references are created by rseiler</description>
     <rule ref="rulesets/java/basic.xml/AvoidDecimalLiteralsInBigDecimalConstructor">
         <priority>3</priority>
     </rule>
@@ -19,6 +23,36 @@
     <rule ref="rulesets/java/basic.xml/CollapsibleIfStatements">
         <priority>4</priority>
     </rule>
+    <rule ref="rulesets/java/basic.xml/DontCallThreadRun">
+        <priority>3</priority>
+    </rule>
+    <rule ref="rulesets/java/basic.xml/DontUseFloatTypeForLoopIndices">
+        <priority>3</priority>
+    </rule>
+    <rule ref="rulesets/java/basic.xml/JumbledIncrementer">
+        <priority>3</priority>
+    </rule>
+    <rule ref="rulesets/java/unnecessary.xml/UnnecessaryFinalModifier">
+        <priority>5</priority>
+    </rule>
+    <rule ref="rulesets/java/unnecessary.xml/UnnecessaryConversionTemporary">
+        <priority>4</priority>
+    </rule>
+    <rule ref="rulesets/java/empty.xml/EmptyCatchBlock">
+        <properties>
+            <property name="allowCommentedBlocks" value="true"/>
+        </properties>
+        <priority>3</priority>
+    </rule>
+    <rule ref="rulesets/java/basic.xml/ExtendsObject">
+        <priority>3</priority>
+    </rule>
+    <rule ref="rulesets/java/basic.xml/ForLoopShouldBeWhileLoop">
+        <priority>4</priority>
+    </rule>
+    <rule ref="rulesets/java/basic.xml/MisplacedNullCheck">
+        <priority>2</priority>
+    </rule>
     <rule ref="rulesets/java/basic.xml/UnconditionalIfStatement">
         <priority>2</priority>
     </rule>
@@ -34,25 +68,55 @@
     <rule ref="rulesets/java/braces.xml/WhileLoopsMustUseBraces">
         <priority>3</priority>
     </rule>
+    <rule ref="rulesets/java/clone.xml/CloneMethodMustImplementCloneable">
+        <priority>3</priority>
+    </rule>
     <rule ref="rulesets/java/clone.xml/CloneThrowsCloneNotSupportedException">
         <priority>3</priority>
     </rule>
+    <rule ref="rulesets/java/basic.xml/OverrideBothEqualsAndHashcode">
+        <priority>2</priority>
+    </rule>
+    <rule ref="rulesets/java/basic.xml/ReturnFromFinallyBlock">
+        <priority>2</priority>
+    </rule>
+    <rule ref="rulesets/java/unnecessary.xml/UnnecessaryReturn">
+        <priority>5</priority>
+    </rule>
     <rule ref="rulesets/java/codesize.xml/NcssMethodCount">
+        <properties>
+            <property name="minimum" value="50.0"/>
+        </properties>
         <priority>3</priority>
     </rule>
     <rule ref="rulesets/java/codesize.xml/NcssTypeCount">
+        <properties>
+            <property name="minimum" value="800.0"/>
+        </properties>
         <priority>3</priority>
     </rule>
     <rule ref="rulesets/java/controversial.xml/DontImportSun">
         <priority>4</priority>
     </rule>
+    <rule ref="rulesets/java/controversial.xml/OneDeclarationPerLine">
+        <priority>3</priority>
+    </rule>
     <rule ref="rulesets/java/coupling.xml/LooseCoupling">
+        <priority>3</priority>
+    </rule>
+    <rule ref="rulesets/java/design.xml/AbstractClassWithoutAbstractMethod">
+        <priority>3</priority>
+    </rule>
+    <rule ref="rulesets/java/design.xml/AbstractClassWithoutAnyMethod">
         <priority>3</priority>
     </rule>
     <rule ref="rulesets/java/design.xml/AvoidInstanceofChecksInCatchClause">
         <priority>4</priority>
     </rule>
     <rule ref="rulesets/java/design.xml/CloseResource">
+        <properties>
+            <property name="types" value="java.sql.Connection,java.sql.Statement,java.sql.ResultSet"/>
+        </properties>
         <priority>3</priority>
     </rule>
     <rule ref="rulesets/java/design.xml/CompareObjectsWithEquals">
@@ -67,6 +131,9 @@
     <rule ref="rulesets/java/design.xml/FinalFieldCouldBeStatic">
         <priority>4</priority>
     </rule>
+    <rule ref="rulesets/java/design.xml/GodClass">
+        <priority>3</priority>
+    </rule>
     <rule ref="rulesets/java/design.xml/IdempotentOperations">
         <priority>3</priority>
     </rule>
@@ -74,15 +141,22 @@
         <priority>3</priority>
     </rule>
     <rule ref="rulesets/java/design.xml/MissingStaticMethodInNonInstantiatableClass">
-        <priority>4</priority>
+        <priority>3</priority>
     </rule>
     <rule ref="rulesets/java/design.xml/PreserveStackTrace">
         <priority>3</priority>
+    </rule>
+    <rule ref="rulesets/java/design.xml/ReturnEmptyArrayRatherThanNull">
+        <priority>4</priority>
     </rule>
     <rule ref="rulesets/java/design.xml/SimplifyConditional">
         <priority>3</priority>
     </rule>
     <rule ref="rulesets/java/design.xml/SingularField">
+        <properties>
+            <property name="disallowNotAssignment" value="false"/>
+            <property name="checkInnerClasses" value="false"/>
+        </properties>
         <priority>4</priority>
     </rule>
     <rule ref="rulesets/java/design.xml/UnnecessaryLocalBeforeReturn">
@@ -94,8 +168,17 @@
     <rule ref="rulesets/java/empty.xml/EmptyIfStmt">
         <priority>2</priority>
     </rule>
-    <rule ref="rulesets/java/empty.xml/EmptyStaticInitializer">
+    <rule ref="rulesets/java/empty.xml/EmptyInitializer">
         <priority>3</priority>
+    </rule>
+    <rule ref="rulesets/java/empty.xml/EmptyStatementBlock">
+        <priority>3</priority>
+    </rule>
+    <rule ref="rulesets/java/empty.xml/EmptyStatementNotInLoop">
+        <priority>3</priority>
+    </rule>
+    <rule ref="rulesets/java/empty.xml/EmptyStaticInitializer">
+        <priority>5</priority>
     </rule>
     <rule ref="rulesets/java/empty.xml/EmptySwitchStatements">
         <priority>3</priority>
@@ -121,35 +204,32 @@
     <rule ref="rulesets/java/finalizers.xml/FinalizeOverloaded">
         <priority>3</priority>
     </rule>
+    <rule ref="rulesets/java/imports.xml/DuplicateImports">
+        <priority>5</priority>
+    </rule>
     <rule ref="rulesets/java/imports.xml/DontImportJavaLang">
         <priority>4</priority>
+    </rule>
+    <rule ref="rulesets/java/imports.xml/UnusedImports">
+        <priority>5</priority>
+    </rule>
+    <rule ref="rulesets/java/imports.xml/ImportFromSamePackage">
+        <priority>5</priority>
     </rule>
     <rule ref="rulesets/java/logging-jakarta-commons.xml/UseCorrectExceptionLogging">
         <priority>3</priority>
     </rule>
+    <rule ref="rulesets/java/javabeans.xml/MissingSerialVersionUID">
+        <priority>3</priority>
+    </rule>
     <rule ref="rulesets/java/logging-java.xml/AvoidPrintStackTrace">
+        <priority>5</priority>
+    </rule>
+    <rule ref="rulesets/java/logging-java.xml/LoggerIsNotStaticFinal">
         <priority>3</priority>
     </rule>
     <rule ref="rulesets/java/logging-java.xml/SystemPrintln">
-        <priority>3</priority>
-    </rule>
-    <rule ref="rulesets/releases/34.xml/AvoidAssertAsIdentifier">
-        <priority>3</priority>
-    </rule>
-    <rule ref="rulesets/releases/34.xml/AvoidEnumAsIdentifier">
-        <priority>3</priority>
-    </rule>
-    <rule ref="rulesets/releases/35.xml/IntegerInstantiation">
-        <priority>3</priority>
-    </rule>
-    <rule ref="rulesets/releases/34.xml/ReplaceEnumerationWithIterator">
-        <priority>3</priority>
-    </rule>
-    <rule ref="rulesets/releases/34.xml/ReplaceHashtableWithMap">
-        <priority>3</priority>
-    </rule>
-    <rule ref="rulesets/releases/34.xml/ReplaceVectorWithList">
-        <priority>3</priority>
+        <priority>5</priority>
     </rule>
     <rule ref="rulesets/java/naming.xml/AvoidDollarSigns">
         <priority>4</priority>
@@ -169,14 +249,23 @@
     <rule ref="rulesets/java/naming.xml/SuspiciousHashcodeMethodName">
         <priority>3</priority>
     </rule>
+    <rule ref="rulesets/java/optimizations.xml/AddEmptyString">
+        <priority>3</priority>
+    </rule>
     <rule ref="rulesets/java/optimizations.xml/AvoidArrayLoops">
         <priority>3</priority>
+    </rule>
+    <rule ref="rulesets/java/optimizations.xml/SimplifyStartsWith">
+        <priority>4</priority>
     </rule>
     <rule ref="rulesets/java/optimizations.xml/UseArrayListInsteadOfVector">
         <priority>3</priority>
     </rule>
     <rule ref="rulesets/java/optimizations.xml/UseArraysAsList">
         <priority>3</priority>
+    </rule>
+    <rule ref="rulesets/java/optimizations.xml/UnnecessaryWrapperObjectCreation">
+        <priority>4</priority>
     </rule>
     <rule ref="rulesets/java/sunsecure.xml/ArrayIsStoredDirectly">
         <priority>2</priority>
@@ -187,25 +276,49 @@
     <rule ref="rulesets/java/strictexception.xml/AvoidCatchingThrowable">
         <priority>2</priority>
     </rule>
+    <rule ref="rulesets/java/strictexception.xml/AvoidLosingExceptionInformation">
+        <priority>3</priority>
+    </rule>
     <rule ref="rulesets/java/strictexception.xml/AvoidRethrowingException">
         <priority>3</priority>
     </rule>
     <rule ref="rulesets/java/strictexception.xml/AvoidThrowingNullPointerException">
         <priority>3</priority>
     </rule>
-    <!--<rule ref="rulesets/java/strictexception.xml/AvoidThrowingRawExceptionTypes">-->
-        <!--<priority>5</priority>-->
-    <!--</rule>-->
+    <rule ref="rulesets/java/strictexception.xml/DoNotExtendJavaLangError">
+        <priority>3</priority>
+    </rule>
+    <rule ref="rulesets/java/strictexception.xml/DoNotThrowExceptionInFinally">
+        <priority>3</priority>
+    </rule>
+    <rule ref="rulesets/java/strictexception.xml/AvoidThrowingNewInstanceOfSameException">
+        <priority>3</priority>
+    </rule>
+    <rule ref="rulesets/java/strictexception.xml/AvoidThrowingRawExceptionTypes">
+        <priority>5</priority>
+    </rule>
     <rule ref="rulesets/java/strictexception.xml/ExceptionAsFlowControl">
         <priority>3</priority>
     </rule>
-    <!--<rule ref="rulesets/java/strings.xml/AvoidDuplicateLiterals">-->
-        <!--<priority>5</priority>-->
-    <!--</rule>-->
-    <rule ref="rulesets/java/strings.xml/InefficientStringBuffering">
+    <rule ref="rulesets/java/strictexception.xml/SignatureDeclareThrowsException">
         <priority>3</priority>
     </rule>
-    <rule ref="rulesets/releases/39.xml/StringBufferInstantiationWithChar">
+    <rule ref="rulesets/java/strings.xml/AppendCharacterWithChar">
+        <priority>4</priority>
+    </rule>
+    <rule ref="rulesets/java/strings.xml/AvoidDuplicateLiterals">
+        <priority>5</priority>
+    </rule>
+    <rule ref="rulesets/java/strings.xml/ConsecutiveLiteralAppends">
+        <properties>
+            <property name="threshold" value="1"/>
+        </properties>
+        <priority>4</priority>
+    </rule>
+    <rule ref="rulesets/java/strings.xml/InefficientEmptyStringCheck">
+        <priority>3</priority>
+    </rule>
+    <rule ref="rulesets/java/strings.xml/InefficientStringBuffering">
         <priority>3</priority>
     </rule>
     <rule ref="rulesets/java/strings.xml/StringInstantiation">
@@ -214,17 +327,24 @@
     <rule ref="rulesets/java/strings.xml/StringToString">
         <priority>3</priority>
     </rule>
+    1
     <rule ref="rulesets/java/strings.xml/UnnecessaryCaseChange">
+        <priority>4</priority>
+    </rule>
+    <rule ref="rulesets/java/strings.xml/UseStringBufferLength">
+        <priority>4</priority>
+    </rule>
+    <rule ref="rulesets/java/strings.xml/AppendCharacterWithChar">
         <priority>4</priority>
     </rule>
     <rule ref="rulesets/java/strings.xml/UseIndexOfChar">
         <priority>3</priority>
     </rule>
-    <rule ref="rulesets/releases/34.xml/UseStringBufferLength">
-        <priority>4</priority>
+    <rule ref="rulesets/java/strings.xml/StringBufferInstantiationWithChar">
+        <priority>3</priority>
     </rule>
-    <rule ref="rulesets/releases/38.xml/UselessStringValueOf">
-        <priority>4</priority>
+    <rule ref="rulesets/java/strings.xml/UseEqualsToCompareStrings">
+        <priority>3</priority>
     </rule>
     <rule ref="rulesets/java/typeresolution.xml/LooseCoupling">
         <priority>3</priority>
@@ -236,16 +356,22 @@
         <priority>2</priority>
     </rule>
     <rule ref="rulesets/java/unnecessary.xml/UselessOverridingMethod">
+        <properties>
+            <property name="ignoreAnnotations" value="false"/>
+        </properties>
         <priority>3</priority>
     </rule>
     <rule ref="rulesets/java/unusedcode.xml/UnusedFormalParameter">
+        <properties>
+            <property name="checkAll" value="false"/>
+        </properties>
         <priority>3</priority>
     </rule>
     <rule ref="rulesets/java/unusedcode.xml/UnusedLocalVariable">
         <priority>3</priority>
     </rule>
     <rule ref="rulesets/java/unusedcode.xml/UnusedModifier">
-        <priority>3</priority>
+        <priority>5</priority>
     </rule>
     <rule ref="rulesets/java/unusedcode.xml/UnusedPrivateField">
         <priority>3</priority>
@@ -254,4 +380,3 @@
         <priority>4</priority>
     </rule>
 </ruleset>
-
